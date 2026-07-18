@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Doctor Appointment Form</title>
+</head>
+
+<body>
+
+    <h1>Doctor Appointment Form</h1>
+    <p>Please fill out the form below to schedule your appointment.</p>
+    <hr>
+     
+    <form>
+
+       <fieldset>
+          <legend>Personal Information</legend>
+
+        <label>your name</label><br>
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+        <label>patient id</label><br>
+        <input type="passwod" id="pid" placeholder="your secret ID"><br><br>
+
+        <label>date of birth</label><br>
+        <input type="date" id="dob"><br>
+
+
+       </fieldset>
+
+        <br>
+
+       <fieldset>>
+          <legend>your visit</legend>
+  
+        <label>select doctor</label><br>
+        <select id="doctor">
+            <option value="">-- Select a doctor --</option>
+            <option value="dr_smith">Dr. Smith-general</option>
+            <option value="dr_jones">Dr. Jones-teeth</option>
+            <option value="dr_brown">Dr. Brown-eye</option>
+        </select><br><br>
+
+        <label>why are you visiting?</label><br>
+        <select id="reason">
+            <option value="">-- Select a reason --</option>
+            <option value="fever">Fever</option>
+            <option value="cough">Cough</option>
+            <option value="checkup">Check-up</option>
+            <option value="tooth">Toothache</option>
+        </select>
+    </form>
+
+</body>
+
+</html>
