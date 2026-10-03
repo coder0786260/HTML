@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my playlist sorter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {background:lavender;}
+        h1 ,h3 {color: darkviolet;}
+        .box {background: white; color: darkviolet;}
+            
+    </style>
+</head>
+
+<body>
+<div class="container py-4 ">
+
+    <h1 class="mb-1">My Playlist Sorter</h1>
+    <p class="text-muted mb-4">sort your playlists with ease</p>
+
+       <div class="card mb-4">
+        <div class="card-body">
+            <h3 class="card-title ">Sort your playlist</h3>
+            <button class="btn btn-primary mr-2" onclick="sortAZ()">Sort Playlist a to z</button>
+            <button class="btn btn-primary" onclick="sortZA()">Sort Playlist z to a</button>
+
+            <div id="nameresults" class="box mt-3  p-3  rounded"></div>
+        </div>
+       </div>
+        
+       </div><div class="card mb-4">
+        <div class="card-body">
+            <h3 class="card-title ">play counts</h3>
+            <button class="btn btn-primary mr-2" onclick="sortleast()">Sort by Least Played</button>
+            <button class="btn btn-primary" onclick="sortmost()">Sort by Most Played</button>
+    
+            <div id="countresults" class="box mt-3  p-3  rounded"></div>
+        </div>
+       </div>
+       
+    
+    <div class="card mb-4">
+        <div class="card-body">
+            <h3 class="card-title ">label evey play count</h3>
+            <button class="btn btn-primary" onclick="addlabel()">add plays label</button>
+    
+            <div id="labelresults" class="box mt-3  p-3  rounded"></div>
+        </div>
+       </div>
+
+ </div>
+
+<script>
+    
+    var songs = ["zoom","bounce","glow","rush", "spark"]
+    var plays = [100, 50, 200, 75, 150]
+
+    document.getElementById("nameresults").innerHTML = "songs:"+ songs;
+    document.getElementById("countresults").innerHTML = "plays:"+ plays;
+    document.getElementById("labelresults").innerHTML = "press the button above";
+
+    function sortAZ() {
+        songs.sort();
+        document.getElementById("nameresults").innerHTML = "A to Z: " + songs;
+    } 
+
+    function sortZA() {
+        songs.sort();
+        songs.reverse();
+        document.getElementById("nameresults").innerHTML = "Z to A: " + songs;
+    }
+
+    function sortleast() {
+        plays.sort(function(a, b){return a-b;});
+        document.getElementById("countresults").innerHTML = "Least Played: " + plays;
+    }
+
+    function sortmost() {
+        plays.sort(function(a, b){return b-a;});
+        document.getElementById("countresults").innerHTML = "Most Played: " + plays;
+    }
+
+    function addlabel() {
+        var l = plays.map(function(c) {return c + "plays";});document.getElementById("labelresults").innerHTML = "plays labeled: " + l;}
+    </script>
+
+</body>    
+
+</html>
